@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<head>
+        <title>Syncfusion JavaScript (ES5) UI Control</title>
+        <link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet" />
+<link id="sample-themes" href="../dist/fluent.css" rel="stylesheet" type="text/css"/>
+        <script src="https://cdn.syncfusion.com/ej2/ej2-base/dist/global/ej2-base.min.js" type="text/javascript"></script>
+        <script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js" type="text/javascript"></script>
+    
+<body>
+    <h2>Syncfusion JavaScript (ES5) Chip Control</h2>
+    <div class="control-section">
+        <div id="chip-default-wrapper">
+            <div class="chips-headers">Chips</div>
+
+            <div class="sample-padding">
+                <div id="chip-default"></div>
+            </div>
+
+            <div class="chips-headers">Input Chips</div>
+
+            <div class="sample-padding">
+                <div id="chip-avatar"></div>
+            </div>
+
+            <div class="chips-headers">Filter Chips</div>
+
+            <div class="sample-padding">
+                <div id="chip-filter"></div>
+            </div>
+
+            <div class="chips-headers">Choice Chips</div>
+
+            <div class="sample-padding">
+                <div id="chip-choice"></div>
+            </div>
+
+            <div class="chips-headers">Avatar Chips</div>
+
+            <div class="sample-padding">
+                <div id="avatar-chip"></div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <b>1. Default chip</b>
+        <div class="container">
+            <div id="default1">Chip</div>
+        </div>
+        <b>2. outline chip</b>
+        <div class="container">
+            <div id="default2">Chip</div>
+        </div>
+        <b>3. choice chip/ single selection</b>
+        <div class="container">
+            <div id="choice">Chip</div>
+        </div>
+        <b>4. choice chip/ single selection -> outline chip</b>
+        <div class="container">
+            <div id="choice_outline">Chip</div>
+        </div>
+        <b>4. filter chip/ multi selection</b>
+        <div class="container">
+            <div id="filter">Chip</div>
+        </div>
+        <b>5. Color customization with default chip (primary, success, warning, danger, info)</b>
+        <div class="container">
+            <div id="chip">Chip</div>
+        </div>
+        <b>6. Color customization with outline chip (primary, success, warning, danger, info)</b>
+        <div class="container">
+            <div id="outline">Chip</div>
+        </div>
+        <b>7. Color customization of default chip with disabled mode</b>
+        <div class="container">
+            <div id="disable">Chip</div>
+        </div>
+        <b>8. Color customization of outline chip with disabled mode</b>
+        <div class="container">
+            <div id="disable_outline">Chip</div>
+        </div>
+        <b>9. Color customization with outline chip (primary, success, warning, danger, info) with selection</b>
+        <div class="container">
+            <div id="select">Chip</div>
+        </div>
+        <b>10. chip with avatar</b>
+        <div class="container">
+            <div id="avatar">Chip</div>
+        </div>
+        <b>11. chip with avatar text</b>
+        <div class="container">
+            <div id="avatar_text">Chip</div>
+        </div>
+        <b>12. chip with avatar on outline</b>
+        <div class="container">
+            <div id="avatar_outline">Chip</div>
+        </div>
+        <b>13. chip with avatar text on outline</b>
+        <div class="container">
+            <div id="avatar_text_outline">Chip</div>
+        </div>
+        <b>14. chip with avatar text rtl mode</b>
+        <div class="container" style="width:500px">
+            <div id="avatar_text_rtl">Chip</div>
+        </div>
+    </div>
+    <script src="https://ej2.syncfusion.com/javascript/demos/chips/default/datasource.js"
+        type="text/javascript"></script>
+    <script>
+        new ej.buttons.ChipList({ chips: window.chipsData.defaultData }, '#chip-default');
+
+        // initialize avatar chip
+        new ej.buttons.ChipList({ chips: window.chipsData.avatarData, enableDelete: true }, '#chip-avatar');
+
+        // initialize filter chip
+        new ej.buttons.ChipList({ chips: window.chipsData.filterData, selection: 'Multiple', selectedChips: [1, 3] }, '#chip-filter');
+
+        // initialize choice chip
+        new ej.buttons.ChipList(
+            {
+                chips: window.chipsData.choiceData, selection: 'Single', cssClass: 'e-outline',
+                selectedChips: [1]
+            },
+            '#chip-choice');
+
+            new ej.buttons.ChipList({ chips: [{
+                "text": "Anne",
+                "avatarIconCss": "anne"
+            },
+            {
+                "text": "Janet",
+                "avatarIconCss": "janet"
+            },
+            {
+                "text": "Laura",
+                "avatarIconCss": "laura"
+            },
+            {
+                "text": "Margaret",
+                "avatarIconCss": "margaret"
+            }
+            ]}, '#avatar-chip');
+
+            var data = [
+        {
+            "text": "Apple",
+            "cssClass": "e-primary",
+            "leadingIconCss": "text"
+        },
+        {
+            "text": "Microsoft",
+            "cssClass": "e-info",
+            "leadingIconCss": "text"
+        },
+        {
+            "text": "Google",
+            "cssClass": "e-success",
+            "leadingIconCss": "text"
+        },
+        {
+            "text": "Tesla",
+            "cssClass": "e-warning",
+            "leadingIconCss": "text"
+        },
+        {
+            "text": "Intel",
+            "cssClass": "e-danger",
+            "leadingIconCss": "text"
+        },
+        {
+            "text": "Intel",
+            "leadingIconCss": "text"
+        }
+    ];
+    var data1 = [
+        {
+            "text": "Apple",
+            "cssClass": "e-outline e-primary",
+            "leadingIconCss": "text"
+        },
+        {
+            "text": "Microsoft",
+            "cssClass": "e-outline e-info",
+            "leadingIconCss": "text"
+        },
+        {
+            "text": "Google",
+            "cssClass": "e-outline e-success",
+            "leadingIconCss": "text"
+        },
+        {
+            "text": "Tesla",
+            "cssClass": "e-outline e-warning",
+            "leadingIconCss": "text"
+        },
+        {
+            "text": "Intel",
+            "cssClass": "e-outline e-danger",
+            "leadingIconCss": "text"
+        }
+    ];
+    var data2 = [{
+            "text": "Chip",
+            "leadingIconCss": "text",
+            "cssClass": "e-disabled"
+        },
+        {
+            "text": "Apple",
+            "cssClass": "e-primary e-disabled",
+            "leadingIconCss": "text"
+        },
+        {
+            "text": "Microsoft",
+            "cssClass": "e-info e-disabled",
+            "leadingIconCss": "text"
+        },
+        {
+            "text": "Google",
+            "cssClass": "e-success e-disabled",
+            "leadingIconCss": "text"
+        },
+        {
+            "text": "Tesla",
+            "cssClass": "e-warning e-disabled",
+            "leadingIconCss": "text"
+        },
+        {
+            "text": "Intel",
+            "cssClass": "e-danger e-disabled",
+            "leadingIconCss": "text"
+        }];
+    var data4 = [{
+            "text": "Chip",
+            "leadingIconCss": "text",
+            "cssClass": "e-outline e-disabled"
+        },
+        {
+            "text": "Apple",
+            "cssClass": "e-primary e-outline e-disabled",
+            "leadingIconCss": "text"
+        },
+        {
+            "text": "Microsoft",
+            "cssClass": "e-info e-outline e-disabled",
+            "leadingIconCss": "text"
+        },
+        {
+            "text": "Google",
+            "cssClass": "e-success e-outline e-disabled",
+            "leadingIconCss": "text"
+        },
+        {
+            "text": "Tesla",
+            "cssClass": "e-warning e-outline e-disabled",
+            "leadingIconCss": "text"
+        },
+        {
+            "text": "Intel",
+            "cssClass": "e-danger e-outline e-disabled",
+            "leadingIconCss": "text"
+        },
+        {
+            "text": "Intel",
+            "cssClass": "e-danger e-outline e-disabled",
+            "leadingIconCss": "text"
+        }];
+    var data3 = [{
+            "text": "Chip",
+        },
+        {
+            "text": "Apple",
+            "leadingIconCss": "text"
+        },
+        {
+            "text": "Microsoft",
+            "leadingIconCss": "text"
+        }];
+    var dat = [{
+            "text": "Chip",
+            "cssClass": "e-outline",
+        },
+        {
+            "text": "Apple",
+            "leadingIconCss": "text",
+            "cssClass": "e-outline",
+        },
+        {
+            "text": "Microsoft",
+            "leadingIconCss": "text",
+            "cssClass": "e-outline",
+        }];
+    var default1 = new ej.buttons.ChipList({ chips: ["Janet Leverling"] });
+    default1.appendTo("#default1");
+    var default2 = new ej.buttons.ChipList({
+        chips: ["Janet Leverling"],
+        cssClass: "e-outline"
+    });
+    default2.appendTo("#default2");
+    var filter = new ej.buttons.ChipList({
+        chips: ['Chai', 'Chang', 'Aniseed Syrup', 'Ikura'],
+        selection: "Multiple",
+        enableDelete: true
+    });
+    filter.appendTo('#filter');
+    var chip = new ej.buttons.ChipList({ chips: data, enableDelete: true });
+    chip.appendTo('#chip');
+    var outline = new ej.buttons.ChipList({ chips: data1, enableDelete: true });
+    outline.appendTo('#outline');
+    var disable = new ej.buttons.ChipList({ chips: data2, enableDelete: true });
+    disable.appendTo('#disable');
+    var choice = new ej.buttons.ChipList({ chips: data3, enableDelete: true, selection: "Single" });
+    choice.appendTo('#choice');
+    var choice_outline = new ej.buttons.ChipList({ chips: dat, enableDelete: true, selection: "Single" });
+    choice_outline.appendTo('#choice_outline');
+    var disable_outline = new ej.buttons.ChipList({ chips: data4, enableDelete: true });
+    disable_outline.appendTo('#disable_outline');
+    var select = new ej.buttons.ChipList({ chips: data1, enableDelete: true, selection: "Single" });
+    select.appendTo('#select');
+    var avatar = new ej.buttons.ChipList({ chips: [{
+                "text": "Anne",
+                "avatarIconCss": "anne"
+            },
+            {
+                "text": "Janet",
+                "avatarIconCss": "janet",
+                "cssClass": "e-primary"
+            },
+            {
+                "text": "Laura",
+                "avatarIconCss": "laura",
+                "cssClass": "e-danger"
+            },
+            {
+                "text": "Margaret",
+                "avatarIconCss": "margaret",
+                "cssClass": "e-success"
+            },
+            {
+                "text": "Margaret",
+                "avatarIconCss": "margaret",
+                "cssClass": "e-warning"
+            }, {
+                "text": "Margaret",
+                "avatarIconCss": "margaret",
+                "cssClass": "e-info"
+            },
+        ] });
+    avatar.appendTo('#avatar');
+    var avatar_text = new ej.buttons.ChipList({ chips: [{
+                "text": "Anne",
+                "avatarText": "JB"
+            },
+            {
+                "text": "Janet",
+                "avatarText": "JB"
+            },
+            {
+                "text": "Laura",
+                "avatarText": "JB"
+            },
+            {
+                "text": "Margaret",
+                "avatarText": "JB"
+            }]
+    });
+    avatar_text.appendTo('#avatar_text');
+    var avatar_outline = new ej.buttons.ChipList({ chips: [{
+                "text": "Janet Leverling",
+                "avatarIconCss": "anne",
+                "cssClass": "e-outline"
+            },
+            {
+                "text": "Janet Leverling",
+                "avatarIconCss": "anne",
+                "cssClass": "e-outline e-primary"
+            },
+            {
+                "text": "Janet Leverling",
+                "avatarIconCss": "anne",
+                "cssClass": "e-outline e-danger"
+            },
+            {
+                "text": "Janet Leverling",
+                "avatarIconCss": "anne",
+                "cssClass": "e-outline e-warning"
+            },
+            {
+                "text": "Janet Leverling",
+                "avatarIconCss": "anne",
+                "cssClass": "e-outline e-info"
+            },
+            {
+                "text": "Janet Leverling",
+                "avatarIconCss": "anne",
+                "cssClass": "e-outline e-success"
+            },
+        ] });
+    avatar_outline.appendTo('#avatar_outline');
+
+    var avatar_text_outline = new ej.buttons.ChipList({ chips: [{
+                "text": "Anne",
+                "avatarText": "JB",
+                "cssClass": "e-outline"
+            },
+            {
+                "text": "Janet",
+                "avatarText": "JB",
+                "cssClass": "e-outline e-primary"
+            },
+            {
+                "text": "Laura",
+                "avatarText": "JB",
+                "cssClass": "e-outline e-success"
+            },
+            {
+                "text": "Margaret",
+                "avatarText": "JB",
+                "cssClass": "e-outline e-warning"
+            },
+            {
+                "text": "Margaret",
+                "avatarText": "JB",
+                "cssClass": "e-outline e-danger"
+            },
+            {
+                "text": "Janet Leverling",
+                "avatarText": "JB",
+                "cssClass": "e-outline e-info"
+            }
+        ]
+    });
+    avatar_text_outline.appendTo('#avatar_text_outline');
+
+    var avatar_text_rtl = new ej.buttons.ChipList({ chips: [{
+                "text": "Anne",
+                "avatarText": "JM"
+            },
+        ],
+        enableRtl: true
+    });
+    avatar_text_rtl.appendTo('#avatar_text_rtl');
+    </script>
+    <style>
+          body {
+            touch-action: none;
+        }
+
+        h3 {
+            text-align: center;
+        }
+        #chip-default-wrapper .sample-padding {
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chips-headers {
+            font-size: 12px;
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        .anne {
+            background-image: url('https://ej2.syncfusion.com/javascript/demos/src/chips/images/anne.png');
+        }
+
+        .janet {
+            background-image: url('https://ej2.syncfusion.com/javascript/demos/src/chips/images/janet.png');
+        }
+
+        .laura {
+            background-image: url('https://ej2.syncfusion.com/javascript/demos/src/chips/images/laura.png');
+        }
+
+        .margaret {
+            background-image: url('https://ej2.syncfusion.com/javascript/demos/src/chips/images/margaret.png');
+        }
+
+        /* chips sample icons */
+        .e-chip .e-chip-icon {
+            font-family: 'e-chips-icons';
+        }
+
+        .text::before {
+            content: '\e701';
+        }
+
+        .mail::before {
+            content: '\e700';
+        }
+
+        .alarm::before {
+            content: '\e704';
+        }
+
+        .game::before {
+            content: '\e703';
+        }
+
+        @font-face {
+            font-family: 'e-chips-icons';
+            src:
+                url(data:application/x-font-ttf;charset=utf-8;base64,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) format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+</body>
+
+</html>
